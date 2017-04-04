@@ -1,17 +1,40 @@
 {
-    "buildNpmdoc":"react-hot-loader",
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "buildNpmdoc": "react-hot-loader",
+    "description": "api documentation for [react-hot-loader (v1.3.1)](https://github.com/gaearon/react-hot-loader) [![npm package](https://img.shields.io/npm/v/npmdoc-react-hot-loader.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-react-hot-loader) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-react-hot-loader.svg)](https://travis-ci.org/npmdoc/node-npmdoc-react-hot-loader)",
     "devDependencies": {
-        "react-hot-loader": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "react-hot-loader": "*",
         "utility2": "kaizhu256/node-utility2#alpha"
     },
-    "name":"npmdoc-react-hot-loader",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-react-hot-loader",
+    "keywords": [
+        "documentation",
+        "react-hot-loader"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_react_hot_loader.js",
+    "name": "npmdoc-react-hot-loader",
+    "nameAlias": "npmdoc_react_hot_loader",
+    "nameOriginal": "npmdoc-react-hot-loader",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/npmdoc/node-npmdoc-react-hot-loader.git"
     },
     "scripts": {
-        "build-ci": "utility2 shReadmeTest build_ci.sh"
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
     "version": "0.0.1"
 }
