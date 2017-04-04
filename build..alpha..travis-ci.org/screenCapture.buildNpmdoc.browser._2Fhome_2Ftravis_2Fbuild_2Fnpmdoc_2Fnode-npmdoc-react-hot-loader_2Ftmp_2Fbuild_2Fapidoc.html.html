@@ -1,0 +1,146 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/gaearon/react-hot-loader">react-hot-loader (v1.3.1)</a>
+</h1>
+<h4>Tweak React components in real time.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.react-hot-loader">module react-hot-loader</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">react-hot-loader.</span>RootInstanceProvider</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.react-hot-loader.RootInstanceProvider">module react-hot-loader.RootInstanceProvider</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.react-hot-loader.RootInstanceProvider.getRootInstances">
+            function <span class="apidocSignatureSpan">react-hot-loader.RootInstanceProvider.</span>getRootInstances
+            <span class="apidocSignatureSpan">(ReactMount)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">react-hot-loader.RootInstanceProvider.</span>injection</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.react-hot-loader" id="apidoc.module.react-hot-loader">module react-hot-loader</a></h1>
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.react-hot-loader.RootInstanceProvider" id="apidoc.module.react-hot-loader.RootInstanceProvider">module react-hot-loader.RootInstanceProvider</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.react-hot-loader.RootInstanceProvider.getRootInstances" id="apidoc.element.react-hot-loader.RootInstanceProvider.getRootInstances">
+        function <span class="apidocSignatureSpan">react-hot-loader.RootInstanceProvider.</span>getRootInstances
+        <span class="apidocSignatureSpan">(ReactMount)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRootInstances = function (ReactMount) {
+  if (injectedProvider) {
+    return injectedProvider.getRootInstances();
+  }
+
+  var instances = ReactMount &amp;&amp; getRootInstancesFromReactMount(ReactMount) || [];
+  if (!Object.keys(instances).length) {
+    warnOnce();
+  }
+
+  return instances;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    '(function () {',
+      'var ReactHotAPI = require(' + JSON.stringify(require.resolve('react-hot-api')) + '),',
+          'RootInstanceProvider = require(' + JSON.stringify(require.resolve('./RootInstanceProvider')) + &amp;#
+x27;),',
+          reactMountImport,
+          'React = require("react");',
+
+      'module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () {',
+        'return RootInstanceProvider.<span class="apidocCodeKeywordSpan">getRootInstances</span>(ReactMount);',
+      '}, React);',
+    '})();',
+  '}',
+  'try {',
+    '(function () {',
+].join(' ');
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
