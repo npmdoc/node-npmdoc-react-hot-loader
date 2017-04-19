@@ -1,22 +1,22 @@
 <svg height="302" width="720" xmlns="http://www.w3.org/2000/svg">
 <rect height="302" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">  0.  2017-04-19 07:19:26 +0000    43833 bytes  .</tspan>
-<tspan x="10" y="42">  1.  2017-04-19 07:19:26 +0000     6364 bytes  CHANGELOG.md</tspan>
-<tspan x="10" y="58">  2.  2017-04-19 07:19:26 +0000      874 bytes  ISSUE_TEMPLATE.md</tspan>
-<tspan x="10" y="74">  3.  2017-04-19 07:19:26 +0000      154 bytes  Injection.js</tspan>
-<tspan x="10" y="90">  4.  2017-04-19 07:19:26 +0000      958 bytes  PATRONS.md</tspan>
-<tspan x="10" y="106">  5.  2017-04-19 07:19:26 +0000     4842 bytes  README.md</tspan>
-<tspan x="10" y="122">  6.  2017-04-19 07:19:26 +0000     1183 bytes  RootInstanceProvider.js</tspan>
-<tspan x="10" y="138">  7.  2017-04-19 07:19:26 +0000     8420 bytes  docs/README.md</tspan>
-<tspan x="10" y="154">  8.  2017-04-19 07:19:26 +0000    11430 bytes  docs/Troubleshooting.md</tspan>
-<tspan x="10" y="170">  9.  2017-04-19 07:19:26 +0000      146 bytes  example/README.md</tspan>
-<tspan x="10" y="186"> 10.  2017-04-19 07:19:26 +0000      209 bytes  getRootInstancesFromReactMount.js</tspan>
-<tspan x="10" y="202"> 11.  2017-04-19 07:19:26 +0000     3367 bytes  index.js</tspan>
-<tspan x="10" y="218"> 12.  2017-04-19 07:19:26 +0000      801 bytes  isReactClassish.js</tspan>
-<tspan x="10" y="234"> 13.  2017-04-19 07:19:26 +0000      288 bytes  isReactElementish.js</tspan>
-<tspan x="10" y="250"> 14.  2017-04-19 07:19:26 +0000     1733 bytes  makeExportsHot.js</tspan>
-<tspan x="10" y="266"> 15.  2017-04-19 07:19:26 +0000      545 bytes  makeIdentitySourceMap.js</tspan>
-<tspan x="10" y="282"> 16.  2017-04-19 07:19:26 +0000     2519 bytes  package.json</tspan>
+<tspan x="10" y="26">  0.  2017-04-19 07:20:24 +0000    43833 bytes  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-19 07:20:24 +0000     6364 bytes  CHANGELOG.md</tspan>
+<tspan x="10" y="58">  2.  2017-04-19 07:20:24 +0000      874 bytes  ISSUE_TEMPLATE.md</tspan>
+<tspan x="10" y="74">  3.  2017-04-19 07:20:24 +0000      154 bytes  Injection.js</tspan>
+<tspan x="10" y="90">  4.  2017-04-19 07:20:24 +0000      958 bytes  PATRONS.md</tspan>
+<tspan x="10" y="106">  5.  2017-04-19 07:20:24 +0000     4842 bytes  README.md</tspan>
+<tspan x="10" y="122">  6.  2017-04-19 07:20:24 +0000     1183 bytes  RootInstanceProvider.js</tspan>
+<tspan x="10" y="138">  7.  2017-04-19 07:20:24 +0000     8420 bytes  docs/README.md</tspan>
+<tspan x="10" y="154">  8.  2017-04-19 07:20:24 +0000    11430 bytes  docs/Troubleshooting.md</tspan>
+<tspan x="10" y="170">  9.  2017-04-19 07:20:24 +0000      146 bytes  example/README.md</tspan>
+<tspan x="10" y="186"> 10.  2017-04-19 07:20:24 +0000      209 bytes  getRootInstancesFromReactMount.js</tspan>
+<tspan x="10" y="202"> 11.  2017-04-19 07:20:24 +0000     3367 bytes  index.js</tspan>
+<tspan x="10" y="218"> 12.  2017-04-19 07:20:24 +0000      801 bytes  isReactClassish.js</tspan>
+<tspan x="10" y="234"> 13.  2017-04-19 07:20:24 +0000      288 bytes  isReactElementish.js</tspan>
+<tspan x="10" y="250"> 14.  2017-04-19 07:20:24 +0000     1733 bytes  makeExportsHot.js</tspan>
+<tspan x="10" y="266"> 15.  2017-04-19 07:20:24 +0000      545 bytes  makeIdentitySourceMap.js</tspan>
+<tspan x="10" y="282"> 16.  2017-04-19 07:20:24 +0000     2519 bytes  package.json</tspan>
 </text>
 </svg>
