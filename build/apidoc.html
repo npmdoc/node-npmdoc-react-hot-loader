@@ -63,6 +63,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.react-hot-loader.react-hot-loader">
+            function <span class="apidocSignatureSpan"></span>react-hot-loader
+            <span class="apidocSignatureSpan">(source, map)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">react-hot-loader.</span>RootInstanceProvider</span>
 
         </li>
@@ -92,6 +101,114 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.react-hot-loader" id="apidoc.module.react-hot-loader">module react-hot-loader</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.react-hot-loader.react-hot-loader" id="apidoc.element.react-hot-loader.react-hot-loader">
+        function <span class="apidocSignatureSpan"></span>react-hot-loader
+        <span class="apidocSignatureSpan">(source, map)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">react-hot-loader = function (source, map) {
+  if (this.cacheable) {
+    this.cacheable();
+  }
+
+  var resourcePath = this.resourcePath;
+  if (/[\\/]webpack[\\/]buildin[\\/]module\.js|[\\/]react-hot-loader[\\/]|[\\/]react[\\/]lib[\\/]/.test(resourcePath)) {
+    return this.callback(null, source, map);
+  }
+
+  var acceptUpdates = this.query !== &#x27;?manual&#x27;,
+      filename = path.basename(resourcePath),
+      separator = &#x27;\n\n&#x27;,
+      prependText,
+      appendText,
+      node,
+      result;
+
+  var reactMountImport;
+  try {
+    require(&#x27;react-dom/lib/ReactMount&#x27;);
+    reactMountImport = &#x27;ReactMount = require(&#x22;react-dom/lib/ReactMount&#x22;),&#x27;;
+} catch(e) {
+    reactMountImport = &#x27;ReactMount = require(&#x22;react/lib/ReactMount&#x22;),&#x27;;
+  }
+
+  prependText = [
+    &#x27;/* REACT HOT LOADER */&#x27;,
+    &#x27;if (module.hot) {&#x27;,
+      &#x27;(function () {&#x27;,
+        &#x27;var ReactHotAPI = require(&#x27; + JSON.stringify(require.resolve(&#x27;react-hot-api&#x27;)) + &#x27;),&#x27;,
+            &#x27;RootInstanceProvider = require(&#x27; + JSON.stringify(require.resolve(&#x27;./RootInstanceProvider&#x27;)) + &#x27;),&#x27;,
+            reactMountImport,
+            &#x27;React = require(&#x22;react&#x22;);&#x27;,
+
+        &#x27;module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () {&#x27;,
+          &#x27;return RootInstanceProvider.getRootInstances(ReactMount);&#x27;,
+        &#x27;}, React);&#x27;,
+      &#x27;})();&#x27;,
+    &#x27;}&#x27;,
+    &#x27;try {&#x27;,
+      &#x27;(function () {&#x27;,
+  ].join(&#x27; &#x27;);
+
+  appendText = [
+      &#x27;/* REACT HOT LOADER */&#x27;,
+      &#x27;}).call(this);&#x27;,
+    &#x27;} finally {&#x27;,
+      &#x27;if (module.hot) {&#x27;,
+        &#x27;(function () {&#x27;,
+          &#x27;var foundReactClasses = module.hot.data &#x26;&#x26; module.hot.data.foundReactClasses || false;&#x27;,
+          &#x27;if (module.exports &#x26;&#x26; module.makeHot) {&#x27;,
+            &#x27;var makeExportsHot = require(&#x27; + JSON.stringify(require.resolve(&#x27;./makeExportsHot&#x27;)) + &#x27;);&#x27;,
+            &#x27;if (makeExportsHot(module, require(&#x22;react&#x22;))) {&#x27;,
+              &#x27;foundReactClasses = true;&#x27;,
+            &#x27;}&#x27;,
+            &#x27;var shouldAcceptModule = &#x27; + JSON.stringify(acceptUpdates) + &#x27; &#x26;&#x26; foundReactClasses;&#x27;,
+            &#x27;if (shouldAcceptModule) {&#x27;,
+              &#x27;module.hot.accept(function (err) {&#x27;,
+                &#x27;if (err) {&#x27;,
+                  &#x27;console.error(&#x22;Cannot apply hot update to &#x22; + &#x27; + JSON.stringify(filename) + &#x27; + &#x22;: &#x22; + err.message);&#x27;,
+                &#x27;}&#x27;,
+              &#x27;});&#x27;,
+            &#x27;}&#x27;,
+          &#x27;}&#x27;,
+          &#x27;module.hot.dispose(function (data) {&#x27;,
+            &#x27;data.makeHot = module.makeHot;&#x27;,
+            &#x27;data.foundReactClasses = foundReactClasses;&#x27;,
+          &#x27;});&#x27;,
+        &#x27;})();&#x27;,
+      &#x27;}&#x27;,
+    &#x27;}&#x27;
+  ].join(&#x27; &#x27;);
+
+  if (this.sourceMap === false) {
+    return this.callback(null, [
+      prependText,
+      source,
+      appendText
+    ].join(separator));
+  }
+
+  if (!map) {
+    map = makeIdentitySourceMap(source, this.resourcePath);
+  }
+
+  node = new SourceNode(null, null, null, [
+    new SourceNode(null, null, this.resourcePath, prependText),
+    SourceNode.fromStringWithSourceMap(source, new SourceMapConsumer(map)),
+    new SourceNode(null, null, this.resourcePath, appendText)
+  ]).join(separator);
+
+  result = node.toStringWithSourceMap();
+
+  this.callback(null, result.code, result.map.toString());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
 
